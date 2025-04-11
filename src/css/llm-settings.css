@@ -1,0 +1,39 @@
+/* LLM Settings Icon Styling */
+.llm-settings-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.llm-settings-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.llm-settings-btn:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+.llm-settings-btn:focus {
+    outline: 3px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* Animation for the settings icon */
+.llm-settings-btn.active {
+    background-color: #0d6efd;
+    transform: rotate(30deg);
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Code Assistant</title>
+    <link rel="icon" type="image/x-icon" href="src/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/images/apple-touch-icon.png">
+    <link rel="manifest" href="src/images/site.webmanifest">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/colorful-theme.css">
+    <link rel="stylesheet" href="src/css/llm-settings.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="row bg-primary text-white p-3">
+            <div class="col d-flex justify-content-between align-items-center">
+                <div>
+                    <h1>UI Code Assistant</h1>
+                    <p class="lead">Generate, analyze, and improve your UI code</p>
+                </div>
+                
+                </div>
+            </div>
+        </header>
+        
+        <main class="row my-4">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header bg-secondary text-white">
+                        <h2 class="h5 mb-0">Choose a Feature</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <button id="generateBtn" class="list-group-item list-group-item-action">Generate Component</button>
+                            <button id="analyzeDesignBtn" class="list-group-item list-group-item-action">Analyze UI Design</button>
+                            <button id="analyzeCodeBtn" class="list-group-item list-group-item-action">Analyze UI Code</button>
+                            <button id="accessibilityBtn" class="list-group-item list-group-item-action">Accessibility Check</button>
+                            <button id="aiAssistantBtn" class="list-group-item list-group-item-action">
+                                <i class="bi bi-robot"></i> AI Assistant
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="optionsPanel" class="card mb-4 d-none">
+                    <div class="card-header bg-secondary text-white">
+                        <h2 class="h5 mb-0">Options</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+                        <h2 class="h5 mb-0">Input/Output</h2>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="codeInputToggle">
+                            <label class="form-check-label" for="codeInputToggle">Toggle Code Input</label>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="inputSection">
+                            <label for="codeInput" class="form-label">Input your code or requirements:</label>
+                            <textarea id="codeInput" class="form-control mb-3" rows="10" placeholder="Enter your code or describe what you need..."></textarea>
+                            <button id="submitBtn" class="btn btn-primary">Submit</button>
+                        </div>
+                        
+                        <div id="outputSection" class="mt-4">
+                            <h3 class="h6">Result:</h3>
+                            <div>
+                                <button id="copyBtn" class="btn btn-sm btn-light" disabled>Copy</button>
+                                <button id="downloadBtn" class="btn btn-sm btn-light ms-2" disabled>Download</button>
+                            </div>
+                            
+                            <div id="loadingIndicator" class="d-none">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <span class="ms-2">Processing your request...</span>
+                            </div>
+                            <pre><code id="codeOutput" class="language-markup"></code></pre>
+                            <div id="analysisOutput" class="alert alert-info d-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="row mt-5 p-3 bg-light text-center">
+            <div class="col">
+                <p>UI Code Assistant - A prototype for GMU SWE632</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Templates Library Modal -->
+    <div class="modal fade" id="templatesModal" tabindex="-1" aria-labelledby="templatesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="templatesModalLabel">Component Templates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="templatesList">
+                        <!-- Templates will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/prismjs/prism.js"></script>
+    <script src="node_modules/prismjs/components/prism-javascript.min.js"></script>
+    <script src="node_modules/prismjs/components/prism-css.min.js"></script>
+    <script src="node_modules/prismjs/components/prism-markup.min.js"></script>
+    <script src="src/js/llm.js"></script>
+    <script src="src/js/llm-settings.js"></script>
+    <script src="src/js/app.js"></script>
+    <script src="src/js/templates.js"></script>
+    <script src="src/js/analyzer.js"></script>
+    <script src="src/js/accessibility.js"></script>
+    
+    <!-- Add new accessibility scripts -->
+    <script src="src/js/accessibility/speech.js"></script>
+    <script src="src/js/accessibility/voice.js"></script>
+    <script src="src/js/accessibility/controls.js"></script>
+    <link rel="stylesheet" href="src/css/accessibility.css">
+    
+    <script>
+        // Initialize accessibility features
+        document.addEventListener('DOMContentLoaded', () => {
+            window.accessibilityControls = new AccessibilityControls();
+        });
+    </script>
+</body>
+</html>

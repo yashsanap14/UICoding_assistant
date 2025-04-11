@@ -1,0 +1,159 @@
+/* Accessibility Controls Styling */
+.accessibility-panel {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    z-index: 1000;
+}
+
+.accessibility-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#toggleA11y {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.control-panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    width: 300px;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+    background: black !important;
+    color: white !important;
+}
+
+.high-contrast .card {
+    background: #222 !important;
+    border-color: #444 !important;
+}
+
+.high-contrast .card-header {
+    background: #333 !important;
+    color: white !important;
+}
+
+.high-contrast .btn-outline-primary {
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.high-contrast .btn-outline-primary:hover {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+.high-contrast a {
+    color: #4da6ff !important;
+}
+
+.high-contrast .form-control {
+    background-color: #222 !important;
+    color: white !important;
+    border-color: #444 !important;
+}
+
+/* Large Text Mode */
+.large-text {
+    font-size: 120% !important;
+}
+
+.large-text h1 {
+    font-size: 2.5rem !important;
+}
+
+.large-text h2 {
+    font-size: 2rem !important;
+}
+
+.large-text .btn {
+    font-size: 1.1rem !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.large-text .form-control {
+    font-size: 1.1rem !important;
+    padding: 0.5rem !important;
+}
+
+/* Reduced Motion */
+.reduced-motion * {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Screen Reader Optimized */
+.sr-optimized .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.sr-optimized button:focus,
+.sr-optimized a:focus,
+.sr-optimized input:focus,
+.sr-optimized select:focus,
+.sr-optimized textarea:focus {
+    outline: 3px solid #4A90E2 !important;
+    outline-offset: 2px !important;
+}
+
+/* Focus Indicators */
+.accessibility-controls button:focus,
+.accessibility-controls select:focus {
+    outline: 3px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* Animation Control */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Voice Control Feedback */
+.voice-active {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: none;
+}
+
+.voice-active.show {
+    display: block;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}

@@ -1,0 +1,100 @@
+/* UI Code Assistant Custom Styles */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+/* Make code area look more like an IDE */
+pre {
+    background-color: #282c34;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+    max-height: 500px;
+    overflow: auto;
+}
+
+/* Style for the code output */
+#codeOutput {
+    border-radius: 5px;
+    white-space: pre-wrap;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Template cards in the modal */
+.template-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.template-card img {
+    max-height: 150px;
+    object-fit: cover;
+}
+
+/* Analysis result styles */
+.suggestion-item {
+    border-left: 3px solid #0d6efd;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.warning-item {
+    border-left: 3px solid #ffc107;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.error-item {
+    border-left: 3px solid #dc3545;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.improvement-item {
+    border-left: 3px solid #20c997;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* For highlighting code parts in analysis */
+.highlight {
+    background-color: rgba(255, 193, 7, 0.2);
+    border-radius: 2px;
+    padding: 2px;
+}
+
+/* Loading animation */
+#loadingIndicator {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+fontcolor{
+    color: #000000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0.5rem;
+    }
+    
+    pre {
+        max-height: 300px;
+    }
+} 

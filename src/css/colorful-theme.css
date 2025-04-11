@@ -1,0 +1,258 @@
+/* UI Code Assistant - Colorful Theme Styles */
+
+:root {
+    --primary-color: #4e54c8;
+    --primary-gradient: linear-gradient(to right, #4e54c8, #8f94fb);
+    --secondary-color: #ff8c00;
+    --secondary-gradient: linear-gradient(to right, #ff8c00, #ffaf4d);
+    --success-color: #20c997;
+    --success-gradient: linear-gradient(to right, #11998e, #38ef7d);
+    --warning-color: #ffc107;
+    --warning-gradient: linear-gradient(to right, #f2994a, #f2c94c);
+    --danger-color: #dc3545;
+    --danger-gradient: linear-gradient(to right, #cb2d3e, #ef473a);
+    --info-color: #0dcaf0;
+    --info-gradient: linear-gradient(to right, #0093E9, #80D0C7);
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Body and general styles */
+body {
+    background-color: #f8f9fa;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+}
+
+/* Header styling */
+header.bg-primary {
+    background: var(--primary-gradient) !important;
+    padding: 1.5rem 3rem !important;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+header .lead {
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Card styling */
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header.bg-secondary {
+    background: var(--secondary-gradient) !important;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+}
+
+/* Feature buttons */
+.list-group-item {
+    border: none;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.list-group-item:hover {
+    background-color: rgba(78, 84, 200, 0.1);
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.list-group-item.active {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+}
+
+/* Button styling */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+    background: #f8f9fa;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background: var(--secondary-gradient);
+    border-color: transparent;
+    color: white;
+}
+
+/* Analysis result styles with enhanced colors */
+.suggestion-item {
+    border-left: 5px solid var(--primary-color);
+    background-color: rgba(78, 84, 200, 0.05);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.warning-item {
+    border-left: 5px solid var(--warning-color);
+    background-color: rgba(255, 193, 7, 0.05);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.error-item {
+    border-left: 5px solid var(--danger-color);
+    background-color: rgba(220, 53, 69, 0.05);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.improvement-item {
+    border-left: 5px solid var(--success-color);
+    background-color: rgba(32, 201, 151, 0.05);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Code area styling */
+pre {
+    background: linear-gradient(to right, #232526, #414345);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styling */
+footer {
+    background: var(--dark-color) !important;
+    color: rgb(241, 191, 9);
+    font-size: large;
+    font-weight: bold;
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem !important;
+    margin-top: 3rem !important;
+}
+
+/* Form controls */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(78, 84, 200, 0.25);
+}
+
+/* Alert styling */
+.alert-info {
+    background: var(--info-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.alert-success {
+    background: var(--success-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.alert-warning {
+    background: var(--warning-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.alert-danger {
+    background: var(--danger-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Modal styling */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    background: var(--primary-gradient);
+    color: white;
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* Loading indicator */
+#loadingIndicator .spinner-border {
+    color: var(--primary-color) !important;
+}
+
+/* Highlight styling */
+.highlight {
+    background-color: rgba(255, 193, 7, 0.3);
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+
+/* Accessibility panel styling */
+.accessibility-panel #toggleA11y {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+}
+
+.control-panel {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
