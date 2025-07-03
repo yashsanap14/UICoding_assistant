@@ -6,6 +6,8 @@ A prototype for an AI-like system that helps UI developers generate, analyze, an
 
 UI Code Assistant is a tool designed to streamline the UI development process by providing automated assistance for component generation, design analysis, code optimization, and accessibility checking. It simulates AI-powered features to help developers create better user interfaces with less effort.
 
+## Live - https://mason.gmu.edu/~ppatil8
+
 ## Features
 
 1. **Component Generation**
