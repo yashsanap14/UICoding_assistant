@@ -39,6 +39,16 @@ UI Code Assistant is a tool designed to streamline the UI development process by
    - Simulated AI interaction for more complex requests
    - Configurable focus areas for specialized assistance
 
+
+<div>
+    <a href="https://www.loom.com/share/00c744d6c9244b6bba52770cedf5d362">
+      <p>UI Code Assistant Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/00c744d6c9244b6bba52770cedf5d362">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/00c744d6c9244b6bba52770cedf5d362-9a0a66018fd53bbc-full-play.gif">
+    </a>
+  </div>
+
 ## Installation
 
 1. Clone the repository:
